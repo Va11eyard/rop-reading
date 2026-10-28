@@ -1,0 +1,4 @@
+ROP-VL public dataset, DOI 10.6084/m9.figshare.30143461, CC BY 4.0.
+Credit: ROP-VL dataset creators listed at the source DOI.
+Licence: https://creativecommons.org/licenses/by/4.0/
+Changes: EXIF orientation applied; metadata removed; resized copies added.

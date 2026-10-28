@@ -1,0 +1,148 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Чтение стадий РН</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:light}
+*{box-sizing:border-box}
+body{margin:0;background:#faf9f6;color:#141414;font:16px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif}
+.wrap{max-width:1100px;margin:0 auto;padding:18px 20px 60px}
+h1{font-size:20px;margin:6px 0 4px}
+.sub{color:#5c574f;font-size:13.5px;margin:0 0 14px}
+.bar{position:sticky;top:0;background:rgba(250,249,246,.95);backdrop-filter:blur(6px);border-bottom:1px solid #e2ded6;padding:10px 0;z-index:5;display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.bar .mono{font:500 12.5px "IBM Plex Mono",monospace;color:#5c574f}
+.progress{flex:1;height:8px;background:#e9e4da;border-radius:4px;overflow:hidden;min-width:120px}
+.progress i{display:block;height:100%;background:#141414;width:0}
+button{font:inherit;border:1px solid #d8d3c9;background:#fff;border-radius:8px;padding:8px 14px;cursor:pointer}
+button.primary{background:#141414;color:#fff;border-color:#141414}
+button:disabled{opacity:.4;cursor:default}
+.card{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(300px,.75fr);gap:18px;margin-top:16px}
+figure{margin:0;background:#111;border-radius:10px;overflow:hidden}
+img{display:block;width:100%;height:auto}
+form{display:grid;gap:12px;align-content:start}
+label{display:grid;gap:5px;font-size:13px;color:#5c574f}
+select,input[type=text]{font:inherit;padding:8px 10px;border:1px solid #d8d3c9;border-radius:8px;background:#fff;color:#141414}
+fieldset{border:1px solid #e4e0d8;border-radius:10px;margin:0;padding:8px 12px;display:flex;gap:6px;flex-wrap:wrap}
+legend{font-size:12px;color:#5c574f;padding:0 4px}
+fieldset label{display:flex;align-items:center;gap:6px;color:#141414;font-size:14px}
+footer{margin-top:26px;color:#6b655b;font-size:12px;line-height:1.6}
+.toast{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:#141414;color:#fff;border-radius:8px;padding:8px 14px;font-size:13px;opacity:0;transition:opacity .25s}
+.toast.on{opacity:1}
+@media (max-width:820px){.card{grid-template-columns:1fr}}
+</style></head><body><div class="wrap">
+<h1>Чтение стадий ретинопатии недоношенных</h1>
+<p class="sub">105 публичных кадров (ROP-VL, CC BY 4.0), по одному на ребёнка, в случайном порядке. Порядок не отражает стадию. Отвечайте по своему чтению — ответы модели здесь не показываются.</p>
+<div id="intro">
+<p>Что заполнять на каждом кадре:</p>
+<ul style="font-size:14px;line-height:1.7;margin:0 0 14px 18px">
+<li><b>Стадия РН:</b> нет / 1 / 2 / 3 / 4 / 5 / не уверен(а)</li>
+<li><b>A-ROP:</b> нет / да / не уверен(а) — это отдельный вопрос, не стадия</li>
+<li><b>Зона:</b> I / II / III / не вижу</li>
+<li><b>Плюс-болезнь:</b> норма / пре-плюс / плюс / не уверен(а)</li>
+<li><b>Качество кадра:</b> хорошее / среднее / плохое (плохое — если стадию по нему не поставить)</li>
+</ul>
+<p style="font-size:14px">Можно пропустить кадр и вернуться: ответы сохраняются в браузере автоматически. В конце — кнопка «Выгрузить ответы»: скачается JSON, его и пришлите.</p>
+<button class="primary" id="start">Начать</button>
+</div>
+<div id="app" hidden>
+<div class="bar"><span class="mono" id="pos"></span><div class="progress"><i id="fill"></i></div>
+<button id="prev">← назад</button><button id="next">дальше →</button>
+<button id="export">Выгрузить ответы</button></div>
+<div class="card">
+<figure><img id="photo" alt=""></figure>
+<form id="form">
+<fieldset><legend>Стадия РН</legend>
+<label><input type="radio" name="stage" value="none">нет</label>
+<label><input type="radio" name="stage" value="1">1</label>
+<label><input type="radio" name="stage" value="2">2</label>
+<label><input type="radio" name="stage" value="3">3</label>
+<label><input type="radio" name="stage" value="4">4</label>
+<label><input type="radio" name="stage" value="5">5</label>
+<label><input type="radio" name="stage" value="unsure">не уверен(а)</label></fieldset>
+<fieldset><legend>A-ROP</legend>
+<label><input type="radio" name="arop" value="no">нет</label>
+<label><input type="radio" name="arop" value="yes">да</label>
+<label><input type="radio" name="arop" value="unsure">не уверен(а)</label></fieldset>
+<fieldset><legend>Зона</legend>
+<label><input type="radio" name="zone" value="I">I</label>
+<label><input type="radio" name="zone" value="II">II</label>
+<label><input type="radio" name="zone" value="III">III</label>
+<label><input type="radio" name="zone" value="unseen">не вижу</label></fieldset>
+<fieldset><legend>Плюс-болезнь</legend>
+<label><input type="radio" name="plus" value="normal">норма</label>
+<label><input type="radio" name="plus" value="pre">пре-плюс</label>
+<label><input type="radio" name="plus" value="plus">плюс</label>
+<label><input type="radio" name="plus" value="unsure">не уверен(а)</label></fieldset>
+<fieldset><legend>Качество кадра</legend>
+<label><input type="radio" name="quality" value="good">хорошее</label>
+<label><input type="radio" name="quality" value="fair">среднее</label>
+<label><input type="radio" name="quality" value="poor">плохое</label></fieldset>
+<label>Комментарий (не обязательно)<input type="text" id="comment" maxlength="200"></label>
+</form>
+</div></div>
+<footer>Данные: ROP-VL, DOI 10.6084/m9.figshare.30143461, лицензия CC BY 4.0 — изображения приведены к JPEG без метаданных. Ответы не покидают ваш браузер, пока вы сами не выгрузите файл.</footer>
+<div class="toast" id="toast"></div>
+</div>
+<script>
+const ITEMS = [{"id": "r001", "src": "images/r001.jpg"}, {"id": "r002", "src": "images/r002.jpg"}, {"id": "r003", "src": "images/r003.jpg"}, {"id": "r004", "src": "images/r004.jpg"}, {"id": "r005", "src": "images/r005.jpg"}, {"id": "r006", "src": "images/r006.jpg"}, {"id": "r007", "src": "images/r007.jpg"}, {"id": "r008", "src": "images/r008.jpg"}, {"id": "r009", "src": "images/r009.jpg"}, {"id": "r010", "src": "images/r010.jpg"}, {"id": "r011", "src": "images/r011.jpg"}, {"id": "r012", "src": "images/r012.jpg"}, {"id": "r013", "src": "images/r013.jpg"}, {"id": "r014", "src": "images/r014.jpg"}, {"id": "r015", "src": "images/r015.jpg"}, {"id": "r016", "src": "images/r016.jpg"}, {"id": "r017", "src": "images/r017.jpg"}, {"id": "r018", "src": "images/r018.jpg"}, {"id": "r019", "src": "images/r019.jpg"}, {"id": "r020", "src": "images/r020.jpg"}, {"id": "r021", "src": "images/r021.jpg"}, {"id": "r022", "src": "images/r022.jpg"}, {"id": "r023", "src": "images/r023.jpg"}, {"id": "r024", "src": "images/r024.jpg"}, {"id": "r025", "src": "images/r025.jpg"}, {"id": "r026", "src": "images/r026.jpg"}, {"id": "r027", "src": "images/r027.jpg"}, {"id": "r028", "src": "images/r028.jpg"}, {"id": "r029", "src": "images/r029.jpg"}, {"id": "r030", "src": "images/r030.jpg"}, {"id": "r031", "src": "images/r031.jpg"}, {"id": "r032", "src": "images/r032.jpg"}, {"id": "r033", "src": "images/r033.jpg"}, {"id": "r034", "src": "images/r034.jpg"}, {"id": "r035", "src": "images/r035.jpg"}, {"id": "r036", "src": "images/r036.jpg"}, {"id": "r037", "src": "images/r037.jpg"}, {"id": "r038", "src": "images/r038.jpg"}, {"id": "r039", "src": "images/r039.jpg"}, {"id": "r040", "src": "images/r040.jpg"}, {"id": "r041", "src": "images/r041.jpg"}, {"id": "r042", "src": "images/r042.jpg"}, {"id": "r043", "src": "images/r043.jpg"}, {"id": "r044", "src": "images/r044.jpg"}, {"id": "r045", "src": "images/r045.jpg"}, {"id": "r046", "src": "images/r046.jpg"}, {"id": "r047", "src": "images/r047.jpg"}, {"id": "r048", "src": "images/r048.jpg"}, {"id": "r049", "src": "images/r049.jpg"}, {"id": "r050", "src": "images/r050.jpg"}, {"id": "r051", "src": "images/r051.jpg"}, {"id": "r052", "src": "images/r052.jpg"}, {"id": "r053", "src": "images/r053.jpg"}, {"id": "r054", "src": "images/r054.jpg"}, {"id": "r055", "src": "images/r055.jpg"}, {"id": "r056", "src": "images/r056.jpg"}, {"id": "r057", "src": "images/r057.jpg"}, {"id": "r058", "src": "images/r058.jpg"}, {"id": "r059", "src": "images/r059.jpg"}, {"id": "r060", "src": "images/r060.jpg"}, {"id": "r061", "src": "images/r061.jpg"}, {"id": "r062", "src": "images/r062.jpg"}, {"id": "r063", "src": "images/r063.jpg"}, {"id": "r064", "src": "images/r064.jpg"}, {"id": "r065", "src": "images/r065.jpg"}, {"id": "r066", "src": "images/r066.jpg"}, {"id": "r067", "src": "images/r067.jpg"}, {"id": "r068", "src": "images/r068.jpg"}, {"id": "r069", "src": "images/r069.jpg"}, {"id": "r070", "src": "images/r070.jpg"}, {"id": "r071", "src": "images/r071.jpg"}, {"id": "r072", "src": "images/r072.jpg"}, {"id": "r073", "src": "images/r073.jpg"}, {"id": "r074", "src": "images/r074.jpg"}, {"id": "r075", "src": "images/r075.jpg"}, {"id": "r076", "src": "images/r076.jpg"}, {"id": "r077", "src": "images/r077.jpg"}, {"id": "r078", "src": "images/r078.jpg"}, {"id": "r079", "src": "images/r079.jpg"}, {"id": "r080", "src": "images/r080.jpg"}, {"id": "r081", "src": "images/r081.jpg"}, {"id": "r082", "src": "images/r082.jpg"}, {"id": "r083", "src": "images/r083.jpg"}, {"id": "r084", "src": "images/r084.jpg"}, {"id": "r085", "src": "images/r085.jpg"}, {"id": "r086", "src": "images/r086.jpg"}, {"id": "r087", "src": "images/r087.jpg"}, {"id": "r088", "src": "images/r088.jpg"}, {"id": "r089", "src": "images/r089.jpg"}, {"id": "r090", "src": "images/r090.jpg"}, {"id": "r091", "src": "images/r091.jpg"}, {"id": "r092", "src": "images/r092.jpg"}, {"id": "r093", "src": "images/r093.jpg"}, {"id": "r094", "src": "images/r094.jpg"}, {"id": "r095", "src": "images/r095.jpg"}, {"id": "r096", "src": "images/r096.jpg"}, {"id": "r097", "src": "images/r097.jpg"}, {"id": "r098", "src": "images/r098.jpg"}, {"id": "r099", "src": "images/r099.jpg"}, {"id": "r100", "src": "images/r100.jpg"}, {"id": "r101", "src": "images/r101.jpg"}, {"id": "r102", "src": "images/r102.jpg"}, {"id": "r103", "src": "images/r103.jpg"}, {"id": "r104", "src": "images/r104.jpg"}, {"id": "r105", "src": "images/r105.jpg"}];
+const KEY = 'rop-reading-v1';
+const state = JSON.parse(localStorage.getItem(KEY) || '{"answers":{},"pos":0}');
+const $ = (id) => document.getElementById(id);
+$('start').onclick = () => { $('intro').hidden = true; $('app').hidden = false; render(); };
+function answerOf(id) { return state.answers[id] || null; }
+function fillInputs(a) {
+  document.querySelectorAll('#form input[type=radio]').forEach((el) => { el.checked = !!a && a[el.name] === el.value; });
+  $('comment').value = (a && a.comment) || '';
+}
+function readForm() {
+  const a = {};
+  document.querySelectorAll('#form input[type=radio]:checked').forEach((el) => { a[el.name] = el.value; });
+  a.comment = $('comment').value.trim();
+  return a;
+}
+function persist() {
+  state.answers[ITEMS[state.pos].id] = readForm();
+  localStorage.setItem(KEY, JSON.stringify(state));
+}
+function answered(id) {
+  const a = state.answers[id];
+  return !!a && !!a.stage;
+}
+function toast(text) {
+  const t = $('toast'); t.textContent = text; t.classList.add('on');
+  setTimeout(() => t.classList.remove('on'), 1600);
+}
+function render() {
+  const item = ITEMS[state.pos];
+  $('photo').src = item.src;
+  fillInputs(answerOf(item.id));
+  $('pos').textContent = `${item.id} · ${state.pos + 1} из ${ITEMS.length}`;
+  const done = ITEMS.filter((i) => answered(i.id)).length;
+  $('fill').style.width = `${(done / ITEMS.length) * 100}%`;
+  $('prev').disabled = state.pos === 0;
+  $('next').disabled = state.pos === ITEMS.length - 1;
+  localStorage.setItem(KEY, JSON.stringify(state));
+}
+$('prev').onclick = () => { persist(); if (state.pos > 0) { state.pos--; render(); } };
+$('next').onclick = () => { persist(); if (state.pos < ITEMS.length - 1) { state.pos++; render(); } };
+document.getElementById('form').addEventListener('change', persist);
+document.getElementById('comment').addEventListener('change', persist);
+document.addEventListener('keydown', (e) => {
+  if (e.target && ['INPUT', 'SELECT', 'TEXTAREA'].includes(e.target.tagName)) return;
+  if (e.key === 'ArrowLeft') $('prev').click();
+  if (e.key === 'ArrowRight') $('next').click();
+});
+$('export').onclick = () => {
+  persist();
+  const payload = { exported_at: new Date().toISOString(), total: ITEMS.length,
+    answered: ITEMS.filter((i) => answered(i.id)).length,
+    answers: ITEMS.map((i) => ({ id: i.id, ...(state.answers[i.id] || {}) })) };
+  const blob = new Blob([JSON.stringify(payload, null, 1)], { type: 'application/json' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'rop_reading_answers.json';
+  a.click();
+  toast('Файл ответов скачан');
+};
+</script>
+</body></html>
