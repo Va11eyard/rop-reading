@@ -1,0 +1,650 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Оценка разметки: 84 публичных кадра</title>
+<style>
+:root{color-scheme:light}*{box-sizing:border-box}
+body{margin:0;background:#faf9f6;color:#141414;font:15px/1.55 system-ui,sans-serif}
+.wrap{max-width:1500px;margin:0 auto;padding:16px 20px 70px}
+h1{font-size:19px;margin:6px 0 4px} .sub{color:#5c574f;font-size:13px;margin:0 0 12px}
+.bar{position:sticky;top:0;z-index:5;background:rgba(250,249,246,.95);backdrop-filter:blur(6px);border-bottom:1px solid #e2ded6;display:flex;gap:14px;align-items:center;padding:10px 0;flex-wrap:wrap}
+.mono{font:500 12.5px "IBM Plex Mono",monospace;color:#5c574f}
+button{font:inherit;border:1px solid #d8d3c9;background:#fff;border-radius:8px;padding:6px 12px;cursor:pointer}
+button.primary{background:#141414;color:#fff;border-color:#141414}
+button.rate.on{background:#141414;color:#fff;border-color:#141414}
+.card{background:#fff;border:1px solid #e4e0d8;border-radius:10px;padding:8px;margin:16px 0}
+img{width:100%;height:auto;display:block;border-radius:4px}
+.row{display:flex;gap:14px;align-items:center;flex-wrap:wrap;padding:8px 2px 2px;font:500 12.5px "IBM Plex Mono",monospace;color:#5c574f}
+.row b{color:#141414} .rate-group{display:flex;gap:6px;align-items:center}
+input{font:inherit;padding:6px 10px;border:1px solid #d8d3c9;border-radius:8px;flex:1;min-width:220px}
+.toast{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:#141414;color:#fff;border-radius:8px;padding:8px 14px;font-size:13px;opacity:0;transition:.25s}
+.toast.on{opacity:1}
+</style></head><body><div class="wrap">
+<div class="bar"><b>Оценка разметки</b><span class="mono" id="progress"></span>
+<span class="mono">слева оригинал · в центре черновик модели · справа классическая морфометрия</span>
+<button class="primary" id="export">Выгрузить оценку</button></div>
+<p><a href="../index.html">← чтение стадий</a></p>
+<h1>84 публичных кадра ROP-VL: наша разметка</h1>
+<p class="sub">Для каждого кадра оцените нашу разметку по трём панелям: верно / частично / неверно (и комментарий при желании). Оценки сохраняются в браузере; в конце — «Выгрузить оценку», скачается JSON. Исходные стадии кадров здесь не показываются.</p>
+<section class="card" data-id="P001">
+<a href="images/P001.jpg" target="_blank"><img src="images/P001.jpg" loading="lazy" alt=""></a>
+<div class="row"><b>P001</b>
+<span class="rate-group">Оценка разметки:
+<button class="rate" data-value="ok">верно</button>
+<button class="rate" data-value="part">частично</button>
+<button class="rate" data-value="bad">неверно</button></span>
+<input type="text" maxlength="160" placeholder="комментарий (не обязательно)"></div></section><section class="card" data-id="P002">
+<a href="images/P002.jpg" target="_blank"><img src="images/P002.jpg" loading="lazy" alt=""></a>
+<div class="row"><b>P002</b>
+<span class="rate-group">Оценка разметки:
+<button class="rate" data-value="ok">верно</button>
+<button class="rate" data-value="part">частично</button>
+<button class="rate" data-value="bad">неверно</button></span>
+<input type="text" maxlength="160" placeholder="комментарий (не обязательно)"></div></section><section class="card" data-id="P003">
+<a href="images/P003.jpg" target="_blank"><img src="images/P003.jpg" loading="lazy" alt=""></a>
+<div class="row"><b>P003</b>
+<span class="rate-group">Оценка разметки:
+<button class="rate" data-value="ok">верно</button>
+<button class="rate" data-value="part">частично</button>
+<button class="rate" data-value="bad">неверно</button></span>
+<input type="text" maxlength="160" placeholder="комментарий (не обязательно)"></div></section><section class="card" data-id="P004">
+<a href="images/P004.jpg" target="_blank"><img src="images/P004.jpg" loading="lazy" alt=""></a>
+<div class="row"><b>P004</b>
+<span class="rate-group">Оценка разметки:
+<button class="rate" data-value="ok">верно</button>
+<button class="rate" data-value="part">частично</button>
+<button class="rate" data-value="bad">неверно</button></span>
+<input type="text" maxlength="160" placeholder="комментарий (не обязательно)"></div></section><section class="card" data-id="P005">
+<a href="images/P005.jpg" target="_blank"><img src="images/P005.jpg" loading="lazy" alt=""></a>
+<div class="row"><b>P005</b>
+<span class="rate-group">Оценка разметки:
+<button class="rate" data-value="ok">верно</button>
+<button class="rate" data-value="part">частично</button>
+<button class="rate" data-value="bad">неверно</button></span>
+<input type="text" maxlength="160" placeholder="комментарий (не обязательно)"></div></section><section class="card" data-id="P006">
+<a href="images/P006.jpg" target="_blank"><img src="images/P006.jpg" loading="lazy" alt=""></a>
+<div class="row"><b>P006</b>
+<span class="rate-group">Оценка разметки:
+<button class="rate" data-value="ok">верно</button>
+<button class="rate" data-value="part">частично</button>
+<button class="rate" data-value="bad">неверно</button></span>
+<input type="text" maxlength="160" placeholder="комментарий (не обязательно)"></div></section><section class="card" data-id="P007">
+<a href="images/P007.jpg" target="_blank"><img src="images/P007.jpg" loading="lazy" alt=""></a>
+<div class="row"><b>P007</b>
+<span class="rate-group">Оценка разметки:
+<button class="rate" data-value="ok">верно</button>
+<button class="rate" data-value="part">частично</button>
+<button class="rate" data-value="bad">неверно</button></span>
+<input type="text" maxlength="160" placeholder="комментарий (не обязательно)"></div></section><section class="card" data-id="P008">
+<a href="images/P008.jpg" target="_blank"><img src="images/P008.jpg" loading="lazy" alt=""></a>
+<div class="row"><b>P008</b>
+<span class="rate-group">Оценка разметки:
+<button class="rate" data-value="ok">верно</button>
+<button class="rate" data-value="part">частично</button>
+<button class="rate" data-value="bad">неверно</button></span>
+<input type="text" maxlength="160" placeholder="комментарий (не обязательно)"></div></section><section class="card" data-id="P009">
+<a href="images/P009.jpg" target="_blank"><img src="images/P009.jpg" loading="lazy" alt=""></a>
+<div class="row"><b>P009</b>
+<span class="rate-group">Оценка разметки:
+<button class="rate" data-value="ok">верно</button>
+<button class="rate" data-value="part">частично</button>
+<button class="rate" data-value="bad">неверно</button></span>
+<input type="text" maxlength="160" placeholder="комментарий (не обязательно)"></div></section><section class="card" data-id="P010">
+<a href="images/P010.jpg" target="_blank"><img src="images/P010.jpg" loading="lazy" alt=""></a>
+<div class="row"><b>P010</b>
+<span class="rate-group">Оценка разметки:
+<button class="rate" data-value="ok">верно</button>
+<button class="rate" data-value="part">частично</button>
+<button class="rate" data-value="bad">неверно</button></span>
+<input type="text" maxlength="160" placeholder="комментарий (не обязательно)"></div></section><section class="card" data-id="P011">
+<a href="images/P011.jpg" target="_blank"><img src="images/P011.jpg" loading="lazy" alt=""></a>
+<div class="row"><b>P011</b>
+<span class="rate-group">Оценка разметки:
+<button class="rate" data-value="ok">верно</button>
+<button class="rate" data-value="part">частично</button>
+<button class="rate" data-value="bad">неверно</button></span>
+<input type="text" maxlength="160" placeholder="комментарий (не обязательно)"></div></section><section class="card" data-id="P012">
+<a href="images/P012.jpg" target="_blank"><img src="images/P012.jpg" loading="lazy" alt=""></a>
+<div class="row"><b>P012</b>
+<span class="rate-group">Оценка разметки:
+<button class="rate" data-value="ok">верно</button>
+<button class="rate" data-value="part">частично</button>
+<button class="rate" data-value="bad">неверно</button></span>
+<input type="text" maxlength="160" placeholder="комментарий (не обязательно)"></div></section><section class="card" data-id="P013">
+<a href="images/P013.jpg" target="_blank"><img src="images/P013.jpg" loading="lazy" alt=""></a>
+<div class="row"><b>P013</b>
+<span class="rate-group">Оценка разметки:
+<button class="rate" data-value="ok">верно</button>
+<button class="rate" data-value="part">частично</button>
+<button class="rate" data-value="bad">неверно</button></span>
+<input type="text" maxlength="160" placeholder="комментарий (не обязательно)"></div></section><section class="card" data-id="P014">
+<a href="images/P014.jpg" target="_blank"><img src="images/P014.jpg" loading="lazy" alt=""></a>
+<div class="row"><b>P014</b>
+<span class="rate-group">Оценка разметки:
+<button class="rate" data-value="ok">верно</button>
+<button class="rate" data-value="part">частично</button>
+<button class="rate" data-value="bad">неверно</button></span>
+<input type="text" maxlength="160" placeholder="комментарий (не обязательно)"></div></section><section class="card" data-id="P015">
+<a href="images/P015.jpg" target="_blank"><img src="images/P015.jpg" loading="lazy" alt=""></a>
+<div class="row"><b>P015</b>
+<span class="rate-group">Оценка разметки:
+<button class="rate" data-value="ok">верно</button>
+<button class="rate" data-value="part">частично</button>
+<button class="rate" data-value="bad">неверно</button></span>
+<input type="text" maxlength="160" placeholder="комментарий (не обязательно)"></div></section><section class="card" data-id="P016">
+<a href="images/P016.jpg" target="_blank"><img src="images/P016.jpg" loading="lazy" alt=""></a>
+<div class="row"><b>P016</b>
+<span class="rate-group">Оценка разметки:
+<button class="rate" data-value="ok">верно</button>
+<button class="rate" data-value="part">частично</button>
+<button class="rate" data-value="bad">неверно</button></span>
+<input type="text" maxlength="160" placeholder="комментарий (не обязательно)"></div></section><section class="card" data-id="P017">
+<a href="images/P017.jpg" target="_blank"><img src="images/P017.jpg" loading="lazy" alt=""></a>
+<div class="row"><b>P017</b>
+<span class="rate-group">Оценка разметки:
+<button class="rate" data-value="ok">верно</button>
+<button class="rate" data-value="part">частично</button>
+<button class="rate" data-value="bad">неверно</button></span>
+<input type="text" maxlength="160" placeholder="комментарий (не обязательно)"></div></section><section class="card" data-id="P018">
+<a href="images/P018.jpg" target="_blank"><img src="images/P018.jpg" loading="lazy" alt=""></a>
+<div class="row"><b>P018</b>
+<span class="rate-group">Оценка разметки:
+<button class="rate" data-value="ok">верно</button>
+<button class="rate" data-value="part">частично</button>
+<button class="rate" data-value="bad">неверно</button></span>
+<input type="text" maxlength="160" placeholder="комментарий (не обязательно)"></div></section><section class="card" data-id="P019">
+<a href="images/P019.jpg" target="_blank"><img src="images/P019.jpg" loading="lazy" alt=""></a>
+<div class="row"><b>P019</b>
+<span class="rate-group">Оценка разметки:
+<button class="rate" data-value="ok">верно</button>
+<button class="rate" data-value="part">частично</button>
+<button class="rate" data-value="bad">неверно</button></span>
+<input type="text" maxlength="160" placeholder="комментарий (не обязательно)"></div></section><section class="card" data-id="P020">
+<a href="images/P020.jpg" target="_blank"><img src="images/P020.jpg" loading="lazy" alt=""></a>
+<div class="row"><b>P020</b>
+<span class="rate-group">Оценка разметки:
+<button class="rate" data-value="ok">верно</button>
+<button class="rate" data-value="part">частично</button>
+<button class="rate" data-value="bad">неверно</button></span>
+<input type="text" maxlength="160" placeholder="комментарий (не обязательно)"></div></section><section class="card" data-id="P021">
+<a href="images/P021.jpg" target="_blank"><img src="images/P021.jpg" loading="lazy" alt=""></a>
+<div class="row"><b>P021</b>
+<span class="rate-group">Оценка разметки:
+<button class="rate" data-value="ok">верно</button>
+<button class="rate" data-value="part">частично</button>
+<button class="rate" data-value="bad">неверно</button></span>
+<input type="text" maxlength="160" placeholder="комментарий (не обязательно)"></div></section><section class="card" data-id="P022">
+<a href="images/P022.jpg" target="_blank"><img src="images/P022.jpg" loading="lazy" alt=""></a>
+<div class="row"><b>P022</b>
+<span class="rate-group">Оценка разметки:
+<button class="rate" data-value="ok">верно</button>
+<button class="rate" data-value="part">частично</button>
+<button class="rate" data-value="bad">неверно</button></span>
+<input type="text" maxlength="160" placeholder="комментарий (не обязательно)"></div></section><section class="card" data-id="P023">
+<a href="images/P023.jpg" target="_blank"><img src="images/P023.jpg" loading="lazy" alt=""></a>
+<div class="row"><b>P023</b>
+<span class="rate-group">Оценка разметки:
+<button class="rate" data-value="ok">верно</button>
+<button class="rate" data-value="part">частично</button>
+<button class="rate" data-value="bad">неверно</button></span>
+<input type="text" maxlength="160" placeholder="комментарий (не обязательно)"></div></section><section class="card" data-id="P024">
+<a href="images/P024.jpg" target="_blank"><img src="images/P024.jpg" loading="lazy" alt=""></a>
+<div class="row"><b>P024</b>
+<span class="rate-group">Оценка разметки:
+<button class="rate" data-value="ok">верно</button>
+<button class="rate" data-value="part">частично</button>
+<button class="rate" data-value="bad">неверно</button></span>
+<input type="text" maxlength="160" placeholder="комментарий (не обязательно)"></div></section><section class="card" data-id="P025">
+<a href="images/P025.jpg" target="_blank"><img src="images/P025.jpg" loading="lazy" alt=""></a>
+<div class="row"><b>P025</b>
+<span class="rate-group">Оценка разметки:
+<button class="rate" data-value="ok">верно</button>
+<button class="rate" data-value="part">частично</button>
+<button class="rate" data-value="bad">неверно</button></span>
+<input type="text" maxlength="160" placeholder="комментарий (не обязательно)"></div></section><section class="card" data-id="P026">
+<a href="images/P026.jpg" target="_blank"><img src="images/P026.jpg" loading="lazy" alt=""></a>
+<div class="row"><b>P026</b>
+<span class="rate-group">Оценка разметки:
+<button class="rate" data-value="ok">верно</button>
+<button class="rate" data-value="part">частично</button>
+<button class="rate" data-value="bad">неверно</button></span>
+<input type="text" maxlength="160" placeholder="комментарий (не обязательно)"></div></section><section class="card" data-id="P027">
+<a href="images/P027.jpg" target="_blank"><img src="images/P027.jpg" loading="lazy" alt=""></a>
+<div class="row"><b>P027</b>
+<span class="rate-group">Оценка разметки:
+<button class="rate" data-value="ok">верно</button>
+<button class="rate" data-value="part">частично</button>
+<button class="rate" data-value="bad">неверно</button></span>
+<input type="text" maxlength="160" placeholder="комментарий (не обязательно)"></div></section><section class="card" data-id="P028">
+<a href="images/P028.jpg" target="_blank"><img src="images/P028.jpg" loading="lazy" alt=""></a>
+<div class="row"><b>P028</b>
+<span class="rate-group">Оценка разметки:
+<button class="rate" data-value="ok">верно</button>
+<button class="rate" data-value="part">частично</button>
+<button class="rate" data-value="bad">неверно</button></span>
+<input type="text" maxlength="160" placeholder="комментарий (не обязательно)"></div></section><section class="card" data-id="P029">
+<a href="images/P029.jpg" target="_blank"><img src="images/P029.jpg" loading="lazy" alt=""></a>
+<div class="row"><b>P029</b>
+<span class="rate-group">Оценка разметки:
+<button class="rate" data-value="ok">верно</button>
+<button class="rate" data-value="part">частично</button>
+<button class="rate" data-value="bad">неверно</button></span>
+<input type="text" maxlength="160" placeholder="комментарий (не обязательно)"></div></section><section class="card" data-id="P030">
+<a href="images/P030.jpg" target="_blank"><img src="images/P030.jpg" loading="lazy" alt=""></a>
+<div class="row"><b>P030</b>
+<span class="rate-group">Оценка разметки:
+<button class="rate" data-value="ok">верно</button>
+<button class="rate" data-value="part">частично</button>
+<button class="rate" data-value="bad">неверно</button></span>
+<input type="text" maxlength="160" placeholder="комментарий (не обязательно)"></div></section><section class="card" data-id="P031">
+<a href="images/P031.jpg" target="_blank"><img src="images/P031.jpg" loading="lazy" alt=""></a>
+<div class="row"><b>P031</b>
+<span class="rate-group">Оценка разметки:
+<button class="rate" data-value="ok">верно</button>
+<button class="rate" data-value="part">частично</button>
+<button class="rate" data-value="bad">неверно</button></span>
+<input type="text" maxlength="160" placeholder="комментарий (не обязательно)"></div></section><section class="card" data-id="P032">
+<a href="images/P032.jpg" target="_blank"><img src="images/P032.jpg" loading="lazy" alt=""></a>
+<div class="row"><b>P032</b>
+<span class="rate-group">Оценка разметки:
+<button class="rate" data-value="ok">верно</button>
+<button class="rate" data-value="part">частично</button>
+<button class="rate" data-value="bad">неверно</button></span>
+<input type="text" maxlength="160" placeholder="комментарий (не обязательно)"></div></section><section class="card" data-id="P033">
+<a href="images/P033.jpg" target="_blank"><img src="images/P033.jpg" loading="lazy" alt=""></a>
+<div class="row"><b>P033</b>
+<span class="rate-group">Оценка разметки:
+<button class="rate" data-value="ok">верно</button>
+<button class="rate" data-value="part">частично</button>
+<button class="rate" data-value="bad">неверно</button></span>
+<input type="text" maxlength="160" placeholder="комментарий (не обязательно)"></div></section><section class="card" data-id="P034">
+<a href="images/P034.jpg" target="_blank"><img src="images/P034.jpg" loading="lazy" alt=""></a>
+<div class="row"><b>P034</b>
+<span class="rate-group">Оценка разметки:
+<button class="rate" data-value="ok">верно</button>
+<button class="rate" data-value="part">частично</button>
+<button class="rate" data-value="bad">неверно</button></span>
+<input type="text" maxlength="160" placeholder="комментарий (не обязательно)"></div></section><section class="card" data-id="P035">
+<a href="images/P035.jpg" target="_blank"><img src="images/P035.jpg" loading="lazy" alt=""></a>
+<div class="row"><b>P035</b>
+<span class="rate-group">Оценка разметки:
+<button class="rate" data-value="ok">верно</button>
+<button class="rate" data-value="part">частично</button>
+<button class="rate" data-value="bad">неверно</button></span>
+<input type="text" maxlength="160" placeholder="комментарий (не обязательно)"></div></section><section class="card" data-id="P036">
+<a href="images/P036.jpg" target="_blank"><img src="images/P036.jpg" loading="lazy" alt=""></a>
+<div class="row"><b>P036</b>
+<span class="rate-group">Оценка разметки:
+<button class="rate" data-value="ok">верно</button>
+<button class="rate" data-value="part">частично</button>
+<button class="rate" data-value="bad">неверно</button></span>
+<input type="text" maxlength="160" placeholder="комментарий (не обязательно)"></div></section><section class="card" data-id="P037">
+<a href="images/P037.jpg" target="_blank"><img src="images/P037.jpg" loading="lazy" alt=""></a>
+<div class="row"><b>P037</b>
+<span class="rate-group">Оценка разметки:
+<button class="rate" data-value="ok">верно</button>
+<button class="rate" data-value="part">частично</button>
+<button class="rate" data-value="bad">неверно</button></span>
+<input type="text" maxlength="160" placeholder="комментарий (не обязательно)"></div></section><section class="card" data-id="P038">
+<a href="images/P038.jpg" target="_blank"><img src="images/P038.jpg" loading="lazy" alt=""></a>
+<div class="row"><b>P038</b>
+<span class="rate-group">Оценка разметки:
+<button class="rate" data-value="ok">верно</button>
+<button class="rate" data-value="part">частично</button>
+<button class="rate" data-value="bad">неверно</button></span>
+<input type="text" maxlength="160" placeholder="комментарий (не обязательно)"></div></section><section class="card" data-id="P039">
+<a href="images/P039.jpg" target="_blank"><img src="images/P039.jpg" loading="lazy" alt=""></a>
+<div class="row"><b>P039</b>
+<span class="rate-group">Оценка разметки:
+<button class="rate" data-value="ok">верно</button>
+<button class="rate" data-value="part">частично</button>
+<button class="rate" data-value="bad">неверно</button></span>
+<input type="text" maxlength="160" placeholder="комментарий (не обязательно)"></div></section><section class="card" data-id="P040">
+<a href="images/P040.jpg" target="_blank"><img src="images/P040.jpg" loading="lazy" alt=""></a>
+<div class="row"><b>P040</b>
+<span class="rate-group">Оценка разметки:
+<button class="rate" data-value="ok">верно</button>
+<button class="rate" data-value="part">частично</button>
+<button class="rate" data-value="bad">неверно</button></span>
+<input type="text" maxlength="160" placeholder="комментарий (не обязательно)"></div></section><section class="card" data-id="P041">
+<a href="images/P041.jpg" target="_blank"><img src="images/P041.jpg" loading="lazy" alt=""></a>
+<div class="row"><b>P041</b>
+<span class="rate-group">Оценка разметки:
+<button class="rate" data-value="ok">верно</button>
+<button class="rate" data-value="part">частично</button>
+<button class="rate" data-value="bad">неверно</button></span>
+<input type="text" maxlength="160" placeholder="комментарий (не обязательно)"></div></section><section class="card" data-id="P042">
+<a href="images/P042.jpg" target="_blank"><img src="images/P042.jpg" loading="lazy" alt=""></a>
+<div class="row"><b>P042</b>
+<span class="rate-group">Оценка разметки:
+<button class="rate" data-value="ok">верно</button>
+<button class="rate" data-value="part">частично</button>
+<button class="rate" data-value="bad">неверно</button></span>
+<input type="text" maxlength="160" placeholder="комментарий (не обязательно)"></div></section><section class="card" data-id="P043">
+<a href="images/P043.jpg" target="_blank"><img src="images/P043.jpg" loading="lazy" alt=""></a>
+<div class="row"><b>P043</b>
+<span class="rate-group">Оценка разметки:
+<button class="rate" data-value="ok">верно</button>
+<button class="rate" data-value="part">частично</button>
+<button class="rate" data-value="bad">неверно</button></span>
+<input type="text" maxlength="160" placeholder="комментарий (не обязательно)"></div></section><section class="card" data-id="P044">
+<a href="images/P044.jpg" target="_blank"><img src="images/P044.jpg" loading="lazy" alt=""></a>
+<div class="row"><b>P044</b>
+<span class="rate-group">Оценка разметки:
+<button class="rate" data-value="ok">верно</button>
+<button class="rate" data-value="part">частично</button>
+<button class="rate" data-value="bad">неверно</button></span>
+<input type="text" maxlength="160" placeholder="комментарий (не обязательно)"></div></section><section class="card" data-id="P045">
+<a href="images/P045.jpg" target="_blank"><img src="images/P045.jpg" loading="lazy" alt=""></a>
+<div class="row"><b>P045</b>
+<span class="rate-group">Оценка разметки:
+<button class="rate" data-value="ok">верно</button>
+<button class="rate" data-value="part">частично</button>
+<button class="rate" data-value="bad">неверно</button></span>
+<input type="text" maxlength="160" placeholder="комментарий (не обязательно)"></div></section><section class="card" data-id="P046">
+<a href="images/P046.jpg" target="_blank"><img src="images/P046.jpg" loading="lazy" alt=""></a>
+<div class="row"><b>P046</b>
+<span class="rate-group">Оценка разметки:
+<button class="rate" data-value="ok">верно</button>
+<button class="rate" data-value="part">частично</button>
+<button class="rate" data-value="bad">неверно</button></span>
+<input type="text" maxlength="160" placeholder="комментарий (не обязательно)"></div></section><section class="card" data-id="P047">
+<a href="images/P047.jpg" target="_blank"><img src="images/P047.jpg" loading="lazy" alt=""></a>
+<div class="row"><b>P047</b>
+<span class="rate-group">Оценка разметки:
+<button class="rate" data-value="ok">верно</button>
+<button class="rate" data-value="part">частично</button>
+<button class="rate" data-value="bad">неверно</button></span>
+<input type="text" maxlength="160" placeholder="комментарий (не обязательно)"></div></section><section class="card" data-id="P048">
+<a href="images/P048.jpg" target="_blank"><img src="images/P048.jpg" loading="lazy" alt=""></a>
+<div class="row"><b>P048</b>
+<span class="rate-group">Оценка разметки:
+<button class="rate" data-value="ok">верно</button>
+<button class="rate" data-value="part">частично</button>
+<button class="rate" data-value="bad">неверно</button></span>
+<input type="text" maxlength="160" placeholder="комментарий (не обязательно)"></div></section><section class="card" data-id="P049">
+<a href="images/P049.jpg" target="_blank"><img src="images/P049.jpg" loading="lazy" alt=""></a>
+<div class="row"><b>P049</b>
+<span class="rate-group">Оценка разметки:
+<button class="rate" data-value="ok">верно</button>
+<button class="rate" data-value="part">частично</button>
+<button class="rate" data-value="bad">неверно</button></span>
+<input type="text" maxlength="160" placeholder="комментарий (не обязательно)"></div></section><section class="card" data-id="P050">
+<a href="images/P050.jpg" target="_blank"><img src="images/P050.jpg" loading="lazy" alt=""></a>
+<div class="row"><b>P050</b>
+<span class="rate-group">Оценка разметки:
+<button class="rate" data-value="ok">верно</button>
+<button class="rate" data-value="part">частично</button>
+<button class="rate" data-value="bad">неверно</button></span>
+<input type="text" maxlength="160" placeholder="комментарий (не обязательно)"></div></section><section class="card" data-id="P051">
+<a href="images/P051.jpg" target="_blank"><img src="images/P051.jpg" loading="lazy" alt=""></a>
+<div class="row"><b>P051</b>
+<span class="rate-group">Оценка разметки:
+<button class="rate" data-value="ok">верно</button>
+<button class="rate" data-value="part">частично</button>
+<button class="rate" data-value="bad">неверно</button></span>
+<input type="text" maxlength="160" placeholder="комментарий (не обязательно)"></div></section><section class="card" data-id="P052">
+<a href="images/P052.jpg" target="_blank"><img src="images/P052.jpg" loading="lazy" alt=""></a>
+<div class="row"><b>P052</b>
+<span class="rate-group">Оценка разметки:
+<button class="rate" data-value="ok">верно</button>
+<button class="rate" data-value="part">частично</button>
+<button class="rate" data-value="bad">неверно</button></span>
+<input type="text" maxlength="160" placeholder="комментарий (не обязательно)"></div></section><section class="card" data-id="P053">
+<a href="images/P053.jpg" target="_blank"><img src="images/P053.jpg" loading="lazy" alt=""></a>
+<div class="row"><b>P053</b>
+<span class="rate-group">Оценка разметки:
+<button class="rate" data-value="ok">верно</button>
+<button class="rate" data-value="part">частично</button>
+<button class="rate" data-value="bad">неверно</button></span>
+<input type="text" maxlength="160" placeholder="комментарий (не обязательно)"></div></section><section class="card" data-id="P054">
+<a href="images/P054.jpg" target="_blank"><img src="images/P054.jpg" loading="lazy" alt=""></a>
+<div class="row"><b>P054</b>
+<span class="rate-group">Оценка разметки:
+<button class="rate" data-value="ok">верно</button>
+<button class="rate" data-value="part">частично</button>
+<button class="rate" data-value="bad">неверно</button></span>
+<input type="text" maxlength="160" placeholder="комментарий (не обязательно)"></div></section><section class="card" data-id="P055">
+<a href="images/P055.jpg" target="_blank"><img src="images/P055.jpg" loading="lazy" alt=""></a>
+<div class="row"><b>P055</b>
+<span class="rate-group">Оценка разметки:
+<button class="rate" data-value="ok">верно</button>
+<button class="rate" data-value="part">частично</button>
+<button class="rate" data-value="bad">неверно</button></span>
+<input type="text" maxlength="160" placeholder="комментарий (не обязательно)"></div></section><section class="card" data-id="P056">
+<a href="images/P056.jpg" target="_blank"><img src="images/P056.jpg" loading="lazy" alt=""></a>
+<div class="row"><b>P056</b>
+<span class="rate-group">Оценка разметки:
+<button class="rate" data-value="ok">верно</button>
+<button class="rate" data-value="part">частично</button>
+<button class="rate" data-value="bad">неверно</button></span>
+<input type="text" maxlength="160" placeholder="комментарий (не обязательно)"></div></section><section class="card" data-id="P057">
+<a href="images/P057.jpg" target="_blank"><img src="images/P057.jpg" loading="lazy" alt=""></a>
+<div class="row"><b>P057</b>
+<span class="rate-group">Оценка разметки:
+<button class="rate" data-value="ok">верно</button>
+<button class="rate" data-value="part">частично</button>
+<button class="rate" data-value="bad">неверно</button></span>
+<input type="text" maxlength="160" placeholder="комментарий (не обязательно)"></div></section><section class="card" data-id="P058">
+<a href="images/P058.jpg" target="_blank"><img src="images/P058.jpg" loading="lazy" alt=""></a>
+<div class="row"><b>P058</b>
+<span class="rate-group">Оценка разметки:
+<button class="rate" data-value="ok">верно</button>
+<button class="rate" data-value="part">частично</button>
+<button class="rate" data-value="bad">неверно</button></span>
+<input type="text" maxlength="160" placeholder="комментарий (не обязательно)"></div></section><section class="card" data-id="P059">
+<a href="images/P059.jpg" target="_blank"><img src="images/P059.jpg" loading="lazy" alt=""></a>
+<div class="row"><b>P059</b>
+<span class="rate-group">Оценка разметки:
+<button class="rate" data-value="ok">верно</button>
+<button class="rate" data-value="part">частично</button>
+<button class="rate" data-value="bad">неверно</button></span>
+<input type="text" maxlength="160" placeholder="комментарий (не обязательно)"></div></section><section class="card" data-id="P060">
+<a href="images/P060.jpg" target="_blank"><img src="images/P060.jpg" loading="lazy" alt=""></a>
+<div class="row"><b>P060</b>
+<span class="rate-group">Оценка разметки:
+<button class="rate" data-value="ok">верно</button>
+<button class="rate" data-value="part">частично</button>
+<button class="rate" data-value="bad">неверно</button></span>
+<input type="text" maxlength="160" placeholder="комментарий (не обязательно)"></div></section><section class="card" data-id="P061">
+<a href="images/P061.jpg" target="_blank"><img src="images/P061.jpg" loading="lazy" alt=""></a>
+<div class="row"><b>P061</b>
+<span class="rate-group">Оценка разметки:
+<button class="rate" data-value="ok">верно</button>
+<button class="rate" data-value="part">частично</button>
+<button class="rate" data-value="bad">неверно</button></span>
+<input type="text" maxlength="160" placeholder="комментарий (не обязательно)"></div></section><section class="card" data-id="P062">
+<a href="images/P062.jpg" target="_blank"><img src="images/P062.jpg" loading="lazy" alt=""></a>
+<div class="row"><b>P062</b>
+<span class="rate-group">Оценка разметки:
+<button class="rate" data-value="ok">верно</button>
+<button class="rate" data-value="part">частично</button>
+<button class="rate" data-value="bad">неверно</button></span>
+<input type="text" maxlength="160" placeholder="комментарий (не обязательно)"></div></section><section class="card" data-id="P063">
+<a href="images/P063.jpg" target="_blank"><img src="images/P063.jpg" loading="lazy" alt=""></a>
+<div class="row"><b>P063</b>
+<span class="rate-group">Оценка разметки:
+<button class="rate" data-value="ok">верно</button>
+<button class="rate" data-value="part">частично</button>
+<button class="rate" data-value="bad">неверно</button></span>
+<input type="text" maxlength="160" placeholder="комментарий (не обязательно)"></div></section><section class="card" data-id="P064">
+<a href="images/P064.jpg" target="_blank"><img src="images/P064.jpg" loading="lazy" alt=""></a>
+<div class="row"><b>P064</b>
+<span class="rate-group">Оценка разметки:
+<button class="rate" data-value="ok">верно</button>
+<button class="rate" data-value="part">частично</button>
+<button class="rate" data-value="bad">неверно</button></span>
+<input type="text" maxlength="160" placeholder="комментарий (не обязательно)"></div></section><section class="card" data-id="P065">
+<a href="images/P065.jpg" target="_blank"><img src="images/P065.jpg" loading="lazy" alt=""></a>
+<div class="row"><b>P065</b>
+<span class="rate-group">Оценка разметки:
+<button class="rate" data-value="ok">верно</button>
+<button class="rate" data-value="part">частично</button>
+<button class="rate" data-value="bad">неверно</button></span>
+<input type="text" maxlength="160" placeholder="комментарий (не обязательно)"></div></section><section class="card" data-id="P066">
+<a href="images/P066.jpg" target="_blank"><img src="images/P066.jpg" loading="lazy" alt=""></a>
+<div class="row"><b>P066</b>
+<span class="rate-group">Оценка разметки:
+<button class="rate" data-value="ok">верно</button>
+<button class="rate" data-value="part">частично</button>
+<button class="rate" data-value="bad">неверно</button></span>
+<input type="text" maxlength="160" placeholder="комментарий (не обязательно)"></div></section><section class="card" data-id="P067">
+<a href="images/P067.jpg" target="_blank"><img src="images/P067.jpg" loading="lazy" alt=""></a>
+<div class="row"><b>P067</b>
+<span class="rate-group">Оценка разметки:
+<button class="rate" data-value="ok">верно</button>
+<button class="rate" data-value="part">частично</button>
+<button class="rate" data-value="bad">неверно</button></span>
+<input type="text" maxlength="160" placeholder="комментарий (не обязательно)"></div></section><section class="card" data-id="P068">
+<a href="images/P068.jpg" target="_blank"><img src="images/P068.jpg" loading="lazy" alt=""></a>
+<div class="row"><b>P068</b>
+<span class="rate-group">Оценка разметки:
+<button class="rate" data-value="ok">верно</button>
+<button class="rate" data-value="part">частично</button>
+<button class="rate" data-value="bad">неверно</button></span>
+<input type="text" maxlength="160" placeholder="комментарий (не обязательно)"></div></section><section class="card" data-id="P069">
+<a href="images/P069.jpg" target="_blank"><img src="images/P069.jpg" loading="lazy" alt=""></a>
+<div class="row"><b>P069</b>
+<span class="rate-group">Оценка разметки:
+<button class="rate" data-value="ok">верно</button>
+<button class="rate" data-value="part">частично</button>
+<button class="rate" data-value="bad">неверно</button></span>
+<input type="text" maxlength="160" placeholder="комментарий (не обязательно)"></div></section><section class="card" data-id="P070">
+<a href="images/P070.jpg" target="_blank"><img src="images/P070.jpg" loading="lazy" alt=""></a>
+<div class="row"><b>P070</b>
+<span class="rate-group">Оценка разметки:
+<button class="rate" data-value="ok">верно</button>
+<button class="rate" data-value="part">частично</button>
+<button class="rate" data-value="bad">неверно</button></span>
+<input type="text" maxlength="160" placeholder="комментарий (не обязательно)"></div></section><section class="card" data-id="P071">
+<a href="images/P071.jpg" target="_blank"><img src="images/P071.jpg" loading="lazy" alt=""></a>
+<div class="row"><b>P071</b>
+<span class="rate-group">Оценка разметки:
+<button class="rate" data-value="ok">верно</button>
+<button class="rate" data-value="part">частично</button>
+<button class="rate" data-value="bad">неверно</button></span>
+<input type="text" maxlength="160" placeholder="комментарий (не обязательно)"></div></section><section class="card" data-id="P072">
+<a href="images/P072.jpg" target="_blank"><img src="images/P072.jpg" loading="lazy" alt=""></a>
+<div class="row"><b>P072</b>
+<span class="rate-group">Оценка разметки:
+<button class="rate" data-value="ok">верно</button>
+<button class="rate" data-value="part">частично</button>
+<button class="rate" data-value="bad">неверно</button></span>
+<input type="text" maxlength="160" placeholder="комментарий (не обязательно)"></div></section><section class="card" data-id="P073">
+<a href="images/P073.jpg" target="_blank"><img src="images/P073.jpg" loading="lazy" alt=""></a>
+<div class="row"><b>P073</b>
+<span class="rate-group">Оценка разметки:
+<button class="rate" data-value="ok">верно</button>
+<button class="rate" data-value="part">частично</button>
+<button class="rate" data-value="bad">неверно</button></span>
+<input type="text" maxlength="160" placeholder="комментарий (не обязательно)"></div></section><section class="card" data-id="P074">
+<a href="images/P074.jpg" target="_blank"><img src="images/P074.jpg" loading="lazy" alt=""></a>
+<div class="row"><b>P074</b>
+<span class="rate-group">Оценка разметки:
+<button class="rate" data-value="ok">верно</button>
+<button class="rate" data-value="part">частично</button>
+<button class="rate" data-value="bad">неверно</button></span>
+<input type="text" maxlength="160" placeholder="комментарий (не обязательно)"></div></section><section class="card" data-id="P075">
+<a href="images/P075.jpg" target="_blank"><img src="images/P075.jpg" loading="lazy" alt=""></a>
+<div class="row"><b>P075</b>
+<span class="rate-group">Оценка разметки:
+<button class="rate" data-value="ok">верно</button>
+<button class="rate" data-value="part">частично</button>
+<button class="rate" data-value="bad">неверно</button></span>
+<input type="text" maxlength="160" placeholder="комментарий (не обязательно)"></div></section><section class="card" data-id="P076">
+<a href="images/P076.jpg" target="_blank"><img src="images/P076.jpg" loading="lazy" alt=""></a>
+<div class="row"><b>P076</b>
+<span class="rate-group">Оценка разметки:
+<button class="rate" data-value="ok">верно</button>
+<button class="rate" data-value="part">частично</button>
+<button class="rate" data-value="bad">неверно</button></span>
+<input type="text" maxlength="160" placeholder="комментарий (не обязательно)"></div></section><section class="card" data-id="P077">
+<a href="images/P077.jpg" target="_blank"><img src="images/P077.jpg" loading="lazy" alt=""></a>
+<div class="row"><b>P077</b>
+<span class="rate-group">Оценка разметки:
+<button class="rate" data-value="ok">верно</button>
+<button class="rate" data-value="part">частично</button>
+<button class="rate" data-value="bad">неверно</button></span>
+<input type="text" maxlength="160" placeholder="комментарий (не обязательно)"></div></section><section class="card" data-id="P078">
+<a href="images/P078.jpg" target="_blank"><img src="images/P078.jpg" loading="lazy" alt=""></a>
+<div class="row"><b>P078</b>
+<span class="rate-group">Оценка разметки:
+<button class="rate" data-value="ok">верно</button>
+<button class="rate" data-value="part">частично</button>
+<button class="rate" data-value="bad">неверно</button></span>
+<input type="text" maxlength="160" placeholder="комментарий (не обязательно)"></div></section><section class="card" data-id="P079">
+<a href="images/P079.jpg" target="_blank"><img src="images/P079.jpg" loading="lazy" alt=""></a>
+<div class="row"><b>P079</b>
+<span class="rate-group">Оценка разметки:
+<button class="rate" data-value="ok">верно</button>
+<button class="rate" data-value="part">частично</button>
+<button class="rate" data-value="bad">неверно</button></span>
+<input type="text" maxlength="160" placeholder="комментарий (не обязательно)"></div></section><section class="card" data-id="P080">
+<a href="images/P080.jpg" target="_blank"><img src="images/P080.jpg" loading="lazy" alt=""></a>
+<div class="row"><b>P080</b>
+<span class="rate-group">Оценка разметки:
+<button class="rate" data-value="ok">верно</button>
+<button class="rate" data-value="part">частично</button>
+<button class="rate" data-value="bad">неверно</button></span>
+<input type="text" maxlength="160" placeholder="комментарий (не обязательно)"></div></section><section class="card" data-id="P081">
+<a href="images/P081.jpg" target="_blank"><img src="images/P081.jpg" loading="lazy" alt=""></a>
+<div class="row"><b>P081</b>
+<span class="rate-group">Оценка разметки:
+<button class="rate" data-value="ok">верно</button>
+<button class="rate" data-value="part">частично</button>
+<button class="rate" data-value="bad">неверно</button></span>
+<input type="text" maxlength="160" placeholder="комментарий (не обязательно)"></div></section><section class="card" data-id="P082">
+<a href="images/P082.jpg" target="_blank"><img src="images/P082.jpg" loading="lazy" alt=""></a>
+<div class="row"><b>P082</b>
+<span class="rate-group">Оценка разметки:
+<button class="rate" data-value="ok">верно</button>
+<button class="rate" data-value="part">частично</button>
+<button class="rate" data-value="bad">неверно</button></span>
+<input type="text" maxlength="160" placeholder="комментарий (не обязательно)"></div></section><section class="card" data-id="P083">
+<a href="images/P083.jpg" target="_blank"><img src="images/P083.jpg" loading="lazy" alt=""></a>
+<div class="row"><b>P083</b>
+<span class="rate-group">Оценка разметки:
+<button class="rate" data-value="ok">верно</button>
+<button class="rate" data-value="part">частично</button>
+<button class="rate" data-value="bad">неверно</button></span>
+<input type="text" maxlength="160" placeholder="комментарий (не обязательно)"></div></section><section class="card" data-id="P084">
+<a href="images/P084.jpg" target="_blank"><img src="images/P084.jpg" loading="lazy" alt=""></a>
+<div class="row"><b>P084</b>
+<span class="rate-group">Оценка разметки:
+<button class="rate" data-value="ok">верно</button>
+<button class="rate" data-value="part">частично</button>
+<button class="rate" data-value="bad">неверно</button></span>
+<input type="text" maxlength="160" placeholder="комментарий (не обязательно)"></div></section>
+<footer class="mono" style="margin-top:20px">ROP-VL, DOI 10.6084/m9.figshare.30143461, CC BY 4.0. Черновик — модель-разметчик v1; классика — детерминированная морфометрия (фронт сосудов и диск).</footer>
+<div class="toast" id="toast"></div>
+<script>
+const ITEMS = [{"id": "P001", "src": "images/P001.jpg"}, {"id": "P002", "src": "images/P002.jpg"}, {"id": "P003", "src": "images/P003.jpg"}, {"id": "P004", "src": "images/P004.jpg"}, {"id": "P005", "src": "images/P005.jpg"}, {"id": "P006", "src": "images/P006.jpg"}, {"id": "P007", "src": "images/P007.jpg"}, {"id": "P008", "src": "images/P008.jpg"}, {"id": "P009", "src": "images/P009.jpg"}, {"id": "P010", "src": "images/P010.jpg"}, {"id": "P011", "src": "images/P011.jpg"}, {"id": "P012", "src": "images/P012.jpg"}, {"id": "P013", "src": "images/P013.jpg"}, {"id": "P014", "src": "images/P014.jpg"}, {"id": "P015", "src": "images/P015.jpg"}, {"id": "P016", "src": "images/P016.jpg"}, {"id": "P017", "src": "images/P017.jpg"}, {"id": "P018", "src": "images/P018.jpg"}, {"id": "P019", "src": "images/P019.jpg"}, {"id": "P020", "src": "images/P020.jpg"}, {"id": "P021", "src": "images/P021.jpg"}, {"id": "P022", "src": "images/P022.jpg"}, {"id": "P023", "src": "images/P023.jpg"}, {"id": "P024", "src": "images/P024.jpg"}, {"id": "P025", "src": "images/P025.jpg"}, {"id": "P026", "src": "images/P026.jpg"}, {"id": "P027", "src": "images/P027.jpg"}, {"id": "P028", "src": "images/P028.jpg"}, {"id": "P029", "src": "images/P029.jpg"}, {"id": "P030", "src": "images/P030.jpg"}, {"id": "P031", "src": "images/P031.jpg"}, {"id": "P032", "src": "images/P032.jpg"}, {"id": "P033", "src": "images/P033.jpg"}, {"id": "P034", "src": "images/P034.jpg"}, {"id": "P035", "src": "images/P035.jpg"}, {"id": "P036", "src": "images/P036.jpg"}, {"id": "P037", "src": "images/P037.jpg"}, {"id": "P038", "src": "images/P038.jpg"}, {"id": "P039", "src": "images/P039.jpg"}, {"id": "P040", "src": "images/P040.jpg"}, {"id": "P041", "src": "images/P041.jpg"}, {"id": "P042", "src": "images/P042.jpg"}, {"id": "P043", "src": "images/P043.jpg"}, {"id": "P044", "src": "images/P044.jpg"}, {"id": "P045", "src": "images/P045.jpg"}, {"id": "P046", "src": "images/P046.jpg"}, {"id": "P047", "src": "images/P047.jpg"}, {"id": "P048", "src": "images/P048.jpg"}, {"id": "P049", "src": "images/P049.jpg"}, {"id": "P050", "src": "images/P050.jpg"}, {"id": "P051", "src": "images/P051.jpg"}, {"id": "P052", "src": "images/P052.jpg"}, {"id": "P053", "src": "images/P053.jpg"}, {"id": "P054", "src": "images/P054.jpg"}, {"id": "P055", "src": "images/P055.jpg"}, {"id": "P056", "src": "images/P056.jpg"}, {"id": "P057", "src": "images/P057.jpg"}, {"id": "P058", "src": "images/P058.jpg"}, {"id": "P059", "src": "images/P059.jpg"}, {"id": "P060", "src": "images/P060.jpg"}, {"id": "P061", "src": "images/P061.jpg"}, {"id": "P062", "src": "images/P062.jpg"}, {"id": "P063", "src": "images/P063.jpg"}, {"id": "P064", "src": "images/P064.jpg"}, {"id": "P065", "src": "images/P065.jpg"}, {"id": "P066", "src": "images/P066.jpg"}, {"id": "P067", "src": "images/P067.jpg"}, {"id": "P068", "src": "images/P068.jpg"}, {"id": "P069", "src": "images/P069.jpg"}, {"id": "P070", "src": "images/P070.jpg"}, {"id": "P071", "src": "images/P071.jpg"}, {"id": "P072", "src": "images/P072.jpg"}, {"id": "P073", "src": "images/P073.jpg"}, {"id": "P074", "src": "images/P074.jpg"}, {"id": "P075", "src": "images/P075.jpg"}, {"id": "P076", "src": "images/P076.jpg"}, {"id": "P077", "src": "images/P077.jpg"}, {"id": "P078", "src": "images/P078.jpg"}, {"id": "P079", "src": "images/P079.jpg"}, {"id": "P080", "src": "images/P080.jpg"}, {"id": "P081", "src": "images/P081.jpg"}, {"id": "P082", "src": "images/P082.jpg"}, {"id": "P083", "src": "images/P083.jpg"}, {"id": "P084", "src": "images/P084.jpg"}];
+const KEY = 'rop-markup-review-v1';
+const state = JSON.parse(localStorage.getItem(KEY) || '{"ratings":{},"comments":{}}');
+const $ = (id) => document.getElementById(id);
+function toast(t){const e=$('toast');e.textContent=t;e.classList.add('on');setTimeout(()=>e.classList.remove('on'),1500);}
+function rate(id, value){ state.ratings[id]=value; localStorage.setItem(KEY, JSON.stringify(state)); paint(id); }
+function paint(id){
+  const card = document.querySelector(`[data-id="${id}"]`);
+  card.querySelectorAll('button.rate').forEach((b) => b.classList.toggle('on', state.ratings[id] === b.dataset.value));
+}
+function comment(id, value){ state.comments[id]=value; localStorage.setItem(KEY, JSON.stringify(state)); }
+document.querySelectorAll('[data-id]').forEach((card) => {
+  const id = card.dataset.id;
+  card.querySelectorAll('button.rate').forEach((b) => b.addEventListener('click', () => rate(id, b.dataset.value)));
+  const c = card.querySelector('input');
+  c.value = state.comments[id] || '';
+  c.addEventListener('change', () => comment(id, c.value.trim()));
+  paint(id);
+});
+$('export').onclick = () => {
+  const payload = { exported_at: new Date().toISOString(), total: ITEMS.length,
+    rated: ITEMS.filter((i) => state.ratings[i.id]).length,
+    entries: ITEMS.map((i) => ({ id: i.id, rating: state.ratings[i.id] || null, comment: state.comments[i.id] || '' })) };
+  const blob = new Blob([JSON.stringify(payload, null, 1)], { type: 'application/json' });
+  const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'rop_markup_review.json'; a.click();
+  toast('Файл оценки скачан');
+};
+const done = Object.keys(state.ratings).length;
+$('progress').textContent = `оценено ${done} из ${ITEMS.length}`;
+</script>
+</div></body></html>
